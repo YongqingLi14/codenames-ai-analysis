@@ -1,0 +1,4 @@
+{
+	"datafile" : "test/optimal_conservative_test_data.csv",
+	"outdir" : "figures"
+}

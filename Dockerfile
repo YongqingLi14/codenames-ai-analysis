@@ -1,5 +1,3 @@
-# 1) choose base container
-# base notebook, contains Jupyter and relevant tools
 ARG BASE_CONTAINER=ucsdets/datahub-base-notebook:2021.2-stable
 
 FROM $BASE_CONTAINER
