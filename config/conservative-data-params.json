@@ -1,8 +1,8 @@
 {
 	"outfile" : "../../codenames-ai-analysis/data/optimal_conservative_data.csv",
-	"num_games" : 1,
+	"num_games" : 100,
 	"algorithms" : ["1", "2"],
 	"data" : 33,
-	"cb_range" : [0.8, 1.0, 0.1],
-	"ci_range" : [0.0, 0.01, 0.008]
+	"cb_range" : [0.8, 1.0, 0.02],
+	"ci_range" : [0.0, 0.01, 0.001]
 }
