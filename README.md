@@ -7,13 +7,10 @@ To play the game, please visit https://github.com/XueweiYan/codenames-game-ai
 ## Instructions
 - Docker image: yongqingli/codenames_ai
 
-- To test the pipeline of the project:
-  `python3 run.py test`
+- To test the pipeline of the project: `python3 run.py test`
   
-- To view full results: (total time will take ~15 hours)
-  `python3 run.py all'
+- To view full results (total time will take ~15 hours): `python3 run.py all`
   
-- To revert the repo back to its original state:
-  `python2 run.py clean`
+- To revert the repo back to its original state: `python2 run.py clean`
   
 - Results will be in Report.ipynb and Report.html
