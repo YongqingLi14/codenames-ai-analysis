@@ -1,0 +1,4 @@
+{
+	"datafile" : "test/ai_human_test_data.csv",
+	"outdir" : "figures"
+}

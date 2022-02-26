@@ -22,7 +22,7 @@ def conservative_test(outfile, num_games, algorithms, data, cb_range, ci_range):
 	#change to game directory to run simulations and collect data
 	os.chdir("game/code")
 
-	data = [str(i) for i in range(1, 2)] # I removed all dblp datasets for this test ______
+	data = [str(i) for i in range(1, 2)] 
 	seeds = [str(i) for i in np.random.randint(2**31 - 1, size = (num_games))]
 	#loop through all combinations between algorithm, dataset, and seed
 	for cb in np.arange(cb_range[0], cb_range[1], cb_range[2]):
@@ -35,8 +35,9 @@ def conservative_test(outfile, num_games, algorithms, data, cb_range, ci_range):
 
 
 def conservative_stats(datafile, outdir): #read in data, create plots
-
 	# datafile = 'data/optimal_conservative_data.csv'
+	# outdir =''
+
 	df = pd.read_csv(datafile)
 	df = df.groupby(['cb', 'ci']).mean().reset_index()
 
@@ -79,5 +80,7 @@ def conservative_stats(datafile, outdir): #read in data, create plots
 	ax.set_ylabel('mean conservative increment', labelpad=10)
 	ax.set_zlabel('mean assassin word triggered', labelpad=10)
 	plt.savefig(os.path.join(outdir, 'conservative_num_assassin.png'))
+
+	return None
 
 

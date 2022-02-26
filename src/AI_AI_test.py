@@ -1,9 +1,11 @@
 import os
 import numpy as np
 from tqdm import tqdm
+import pandas as pd
+import matplotlib.pyplot as plt
 
-def ai_test(outfile, num_games, algorithms, data):
-	# outfile = '../../data/ai_ai_data.csv'
+def ai_ai_test(outfile, num_games, algorithms, data):
+	# outfile = '"../../codenames-ai-analysis/data/ai_ai_data.csv"'
 	# num_games = 100
 	# algorithms = ['1', '2']  
 	# data = 33
@@ -14,8 +16,10 @@ def ai_test(outfile, num_games, algorithms, data):
 	with open("./data/ai_ai_data.csv", 'w') as f:
 	    f.write(",".join(['turn', 'assassin', 'algorithm', 'data', 'seed', 'cb', 'ci']) + "\n")
 
-	#change to game directory to run simulations and collect data
-	os.chdir("game/code")
+	#change to game directory, ai_ai_testing branch, to run simulations and collect data
+	os.chdir("game")
+	os.system('git checkout ai_ai_testing')
+	os.chdir("code")
 
 	data = [str(i) for i in range(1, data + 1)]
 	seeds = [str(i) for i in np.random.randint(2**31 - 1, size = (num_games))]
@@ -29,6 +33,12 @@ def ai_test(outfile, num_games, algorithms, data):
 
 	os.chdir("../../codenames-ai-analysis")
 
-def ai_stats(datafile, outdir):
+def ai_ai_stats(datafile, outdir):
 	#read in data, create plots
+	# datafile = 'data/ai_ai_(test_)data.csv'
+	# outdir = 'figures'
+
+
+
+
 	return None

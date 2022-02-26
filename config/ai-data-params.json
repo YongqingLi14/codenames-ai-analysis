@@ -1,6 +1,6 @@
 {
 	"outfile" : "../../codenames-ai-analysis/data/ai_ai_data.csv",
 	"num_games" : 1,
-	"algorithms" : ["1"],
+	"algorithms" : ["1", "2"],
 	"data" : 1
 }
