@@ -38,10 +38,11 @@ def ai_human_stats(datafile, outdir): #read in data, create plots
 	# outdir = 'figures'
 
 	data = pd.read_csv(datafile)
-	data['data'] = data['data'].str.split('_').str[0]
+	data['data'] = data['data'].str.split('.').str[0]
 	data['true accuracy'] = data['intended correct']/data['total intended']
 	data['total accuracy'] = (data['intended correct'] + data['unintended correct'])/data['total intended']
 	complete_game = data[data['assassin'] == False]
+
 
 	# generate statistics
 	stats = pd.DataFrame(index = ['glove','word2vec','wup'])
@@ -51,16 +52,17 @@ def ai_human_stats(datafile, outdir): #read in data, create plots
 	stats['Assassin'] = data.groupby('data')['assassin'].sum().values
 	stats['Avg True Accuracy '] = data.groupby('data')['true accuracy'].mean().values
 	stats['Avg Total Accuracy '] = data.groupby('data')['total accuracy'].mean().values  
+	stats.to_csv(os.path.join(outdir, 'human_stats.csv'))
 
 
 	# num assassin by dataset
 	num_assassin = stats.iloc[:,[3]].plot.bar(rot = 0)
 	num_assassin.bar_label(num_assassin.containers[0])
-	num_assassin.set_ylim(0,50)	
+	num_assassin.set_ylim(0,80)	
 	num_assassin.set(xlabel="Dataset", 
 	                 ylabel="Num Assassin Triggered", 
 	                 title = "Number Assassin Triggered v. Dataset")
-	plt.savefig(os.path.join(outdir, 'assassin.png'))
+	plt.savefig(os.path.join(outdir, 'human_assassin.png'))
 
 
 	# average turns taken
@@ -71,7 +73,7 @@ def ai_human_stats(datafile, outdir): #read in data, create plots
 	turns.set(xlabel="Dataset", 
 				ylabel="Avg Turns Per Game", 
 				title = "Average Turns v. Dataset")
-	plt.savefig(os.path.join(outdir, 'turns.png'))
+	plt.savefig(os.path.join(outdir, 'human_turns.png'))
 
 
 	# accuracy
@@ -82,7 +84,7 @@ def ai_human_stats(datafile, outdir): #read in data, create plots
 	acc.set(xlabel="Dataset", 
 			ylabel="Accuracy", 
 			title = "Accuracy v. Dataset")
-	plt.savefig(os.path.join(outdir, 'accuracy.png'))
+	plt.savefig(os.path.join(outdir, 'human_accuracy.png'))
 
 
 	return None
