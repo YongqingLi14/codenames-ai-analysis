@@ -3,11 +3,10 @@ import numpy as np
 from tqdm import tqdm
 import pandas as pd
 import matplotlib.pyplot as plt
-import imgkit
 
 
 def ai_human_test(outfile, num_games, data):
-	# outfile = '../../data/ai_human_data.csv'
+	# outfile = '../../codenames-ai-analysis/data/ai_human_data.csv'
 	# num_games = 100
 	# data = ["1", "2", "3"]
 
@@ -20,9 +19,9 @@ def ai_human_test(outfile, num_games, data):
 
 	#change to game directory to run simulations and collect data
 	os.chdir("game")
-	os.system('git checkout human_ai_testing')
+	os.system('git checkout performance_testing')
 	os.chdir("code")
-
+   
 	seeds = [str(i) for i in np.random.randint(2**31 - 1, size = (num_games))]
 	#loop through each datasets and record performance
 	for d in data:
@@ -46,12 +45,13 @@ def ai_human_stats(datafile, outdir): #read in data, create plots
 
 	# generate statistics
 	stats = pd.DataFrame(index = ['glove','word2vec','wup'])
-	stats['Num Games'] = data.groupby('data')['turn'].count().values
-	stats['Avg Turn All'] = data.groupby('data')['turn'].mean().values
-	stats['Avg Turn Complete'] = complete_game.groupby('data')['turn'].mean().values
-	stats['Assassin'] = data.groupby('data')['assassin'].sum().values
-	stats['Avg True Accuracy '] = data.groupby('data')['true accuracy'].mean().values
-	stats['Avg Total Accuracy '] = data.groupby('data')['total accuracy'].mean().values  
+	stats['Num Games'] = data.groupby('data')['turn'].count()
+	stats['Avg Turn All'] = data.groupby('data')['turn'].mean()
+	stats['Avg Turn Complete'] = complete_game.groupby('data')['turn'].mean()
+	stats['Assassin'] = data.groupby('data')['assassin'].sum()
+	stats['Avg True Accuracy '] = data.groupby('data')['true accuracy'].mean()
+	stats['Avg Total Accuracy '] = data.groupby('data')['total accuracy'].mean()
+	stats = stats.replace({np.nan:0})
 	stats.to_csv(os.path.join(outdir, 'human_stats.csv'))
 
 
@@ -61,7 +61,7 @@ def ai_human_stats(datafile, outdir): #read in data, create plots
 	num_assassin.set_ylim(0,80)	
 	num_assassin.set(xlabel="Dataset", 
 	                 ylabel="Num Assassin Triggered", 
-	                 title = "Number Assassin Triggered v. Dataset")
+	                 title = "Number of Assassins Triggered v. Dataset")
 	plt.savefig(os.path.join(outdir, 'human_assassin.png'))
 
 

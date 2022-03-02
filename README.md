@@ -14,3 +14,5 @@ To play the game, please visit https://github.com/XueweiYan/codenames-game-ai
 - To revert the repo back to its original state: `python2 run.py clean`
   
 - Results will be in Report.ipynb and Report.html
+
+

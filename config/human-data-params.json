@@ -1,5 +1,5 @@
 {
 	"outfile" : "../../codenames-ai-analysis/data/ai_human_data.csv",
-	"num_games" : 1,
+	"num_games" : 100,
 	"data" : ["1","2","3"]
 }
