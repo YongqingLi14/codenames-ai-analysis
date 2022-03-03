@@ -13,7 +13,9 @@ This project includes the experiments and analysis on the performance of Codenam
   * https://github.com/XueweiYan/codenames-game-ai
 * Resulting set up should look like this:
 
-![alt text](https://github.com/YongqingLi14/codenames-ai-analysis/blob/main/file_organization.png)
+<p align="center">
+  <img src="https://github.com/YongqingLi14/codenames-ai-analysis/blob/main/file_organization.png" />
+</p>
 
 
 ## Running the Repository
