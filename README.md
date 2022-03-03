@@ -2,8 +2,8 @@
 
 ## Introduction
 This project includes the experiments and analysis on the performance of Codenames AI, a system capable of replacing human efforts in the game Codenames.
-To play the game, please visit https://github.com/XueweiYan/codenames-game-ai
-For more details on the project, please visit https://xueweiyan.github.io/codenames-ai-website/
+* To play the game, please visit https://github.com/XueweiYan/codenames-game-ai
+* For more details on the project, please visit https://xueweiyan.github.io/codenames-ai-website/
 
 
 ## Instructions
@@ -12,14 +12,17 @@ For more details on the project, please visit https://xueweiyan.github.io/codena
 * Clone the game repo and place it on the same level as this repository:
   * https://github.com/XueweiYan/codenames-game-ai
 * Resulting set up should look like this:
+
 ![alt text](https://github.com/YongqingLi14/codenames-ai-analysis/blob/main/file_organization.png)
 
 
 ## Running the Repository
 * Run the following docker image inside a container: 
   * yongqingli/codenames_ai
+
 * To test the pipeline of the project: 
   * `python3 run.py test`
+ 
 * To view full results (total time will take ~15 hours): 
   * `python3 run.py all`
   
