@@ -21,30 +21,26 @@ This project includes the experiments and analysis on the performance of Codenam
 ## Running the Repository
 * Run the following docker image inside a container: 
   * yongqingli/codenames_ai
-
 * To test the pipeline of the project: 
   * `python3 run.py test`
- 
 * To view full results (total time will take ~15 hours): 
-  * `python3 run.py all`
-  
+  * `python3 run.py all` 
 * To revert the repo back to its original state: 
-  * `python3 run.py clean`
-  
+  * `python3 run.py clean` 
 * Results will be availale in Report.ipynb and Report.html
 
 
 ## Datasets
 We put 3 datasets to the test in this experiment:
-* glove: 
+* GloVe: 
   * pretrained word embeddings from Wikipedia
   * cosine similarity
-* word2vec
+* Word2Vec
   * word embeddings trained from the English Simple Wiki using the gensim word2vec model
   * cosine similarity
-* wup
+* WordNet
   * word embeddings from the WordNet dataset
-  * Wu-Palmer(wup) similiarity
+  * Wu-Palmer similiarity
 
 
 ## Testing Metrics
