@@ -44,13 +44,13 @@ def ai_ai_stats(datafile, outdir):
 
 
 	# generate statistics
-	stats = pd.DataFrame(index = ['glove','word2vec','wup'])
-	stats['Num Games'] = data.groupby('data')['turn'].count().values
-	stats['Avg Turn All'] = data.groupby('data')['turn'].mean().values
-	stats['Avg Turn Complete'] = complete_game.groupby('data')['turn'].mean().values
-	stats['Assassin'] = data.groupby('data')['assassin'].sum().values
-	stats['Avg True Accuracy '] = data.groupby('data')['true accuracy'].mean().values
-	stats['Avg Total Accuracy '] = data.groupby('data')['total accuracy'].mean().values  
+	stats = pd.DataFrame(index = ['GloVe','Word2Vec','WordNet'])
+	stats['Num Games'] = data.groupby('data')['turn'].count()
+	stats['Avg Turn All'] = data.groupby('data')['turn'].mean()
+	stats['Avg Turn Complete'] = complete_game.groupby('data')['turn'].mean()
+	stats['Assassin'] = data.groupby('data')['assassin'].sum()
+	stats['Avg True Accuracy '] = data.groupby('data')['true accuracy'].mean()
+	stats['Avg Total Accuracy '] = data.groupby('data')['total accuracy'].mean()
 	stats = stats.replace({np.nan:0})
 	stats.to_csv(os.path.join(outdir, 'ai_stats.csv'))
 
@@ -77,9 +77,9 @@ def ai_ai_stats(datafile, outdir):
 
 
 	# accuracy
-	acc = stats.transpose().iloc[4:,].plot.bar(rot = 0)
+	acc = stats.transpose().iloc[4:,].plot.bar(rot = 0, width = .75)
 	for container in acc.containers:
-		acc.bar_label(container, fmt='%.2f')
+		acc.bar_label(container, fmt='%.3f')
 	acc.set_ylim(0,1.75)
 	acc.set(xlabel="Dataset", 
 			ylabel="Accuracy", 

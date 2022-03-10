@@ -44,7 +44,7 @@ def ai_human_stats(datafile, outdir): #read in data, create plots
 
 
 	# generate statistics
-	stats = pd.DataFrame(index = ['glove','word2vec','wup'])
+	stats = pd.DataFrame(index = ['GloVe','Word2Vec','WordNet'])
 	stats['Num Games'] = data.groupby('data')['turn'].count()
 	stats['Avg Turn All'] = data.groupby('data')['turn'].mean()
 	stats['Avg Turn Complete'] = complete_game.groupby('data')['turn'].mean()

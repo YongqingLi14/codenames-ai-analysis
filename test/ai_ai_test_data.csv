@@ -1,17 +1,17 @@
 turn,assassin,intended correct,unintended correct,wrong,total intended,data,seed
 6,False,16,0,0,16,GloVe.npz,38463611
-6,False,15,0,0,15,GloVe.npz,15078395
+6,True,15,0,0,15,GloVe.npz,15078395
 5,False,15,0,0,15,GloVe.npz,127975826
 6,False,16,0,0,16,GloVe.npz,959697919
 5,False,15,0,0,15,GloVe.npz,1610218413
 6,False,16,0,0,16,WordNet.npz,1017507996
-7,False,15,0,0,15,WordNet.npz,237091562
+7,True,15,0,0,15,WordNet.npz,237091562
 6,False,14,0,0,14,WordNet.npz,123517213
 7,False,16,0,0,16,WordNet.npz,1056872336
 7,False,15,0,0,15,WordNet.npz,1216409344
-7,False,16,0,0,16,Word2Vec.npz,801723774
+7,True,16,0,0,16,Word2Vec.npz,801723774
 6,False,15,0,0,15,Word2Vec.npz,234974235
 6,False,15,0,0,15,Word2Vec.npz,1176310082
-6,False,14,0,0,14,Word2Vec.npz,910070548
+6,True,14,0,0,14,Word2Vec.npz,910070548
 7,False,16,0,0,16,Word2Vec.npz,1240753140
 6,False,14,0,0,14,Word2Vec.npz,839549015
